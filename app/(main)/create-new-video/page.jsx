@@ -38,7 +38,7 @@ import { useRouter } from 'next/navigation';
     }
 
     if(!formData?.topic || !formData?.script || !formData?.VideoStyle || !formData?.caption || !formData?.voice){
-      console.log("error enter all fields")
+      alert("error enter all fields")
       return;
     }
     setLoading(true)
