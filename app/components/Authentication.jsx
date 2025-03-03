@@ -2,9 +2,11 @@
 import React from 'react'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '@/configs/firebaseConfig';
+import { useRouter } from 'next/navigation';
 
 export const Authentication = ({children}) => {
     const provider = new GoogleAuthProvider();
+    const router = useRouter();
 
     const onSignInClick = () => {
         console.log("signin clicked")
@@ -16,6 +18,7 @@ export const Authentication = ({children}) => {
     // The signed-in user info.
     const user = result.user;
     console.log("user: ",user)
+    router.push('/dashboard')
     // IdP data available using getAdditionalUserInfo(result)
     // ...
   }).catch((error) => {

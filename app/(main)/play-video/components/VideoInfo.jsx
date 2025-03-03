@@ -16,7 +16,7 @@ const VideoInfo = ({videoData}) => {
       <h2 className='mt-5'>Project Name: {videoData?.title}</h2>
       <p className='text-gray-500'>Script: {videoData?.script}</p>
       <h2>Video Style: {videoData?.VideoStyle}</h2>
-      <Button><DownloadIcon/> Export & Download</Button>
+      <Button onClick={alert('In development')}><DownloadIcon/> Export & Download</Button>
       </div>
     </div>
   )

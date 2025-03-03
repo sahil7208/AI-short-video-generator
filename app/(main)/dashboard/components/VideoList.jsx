@@ -88,7 +88,7 @@ const VideoList = () => {
                                             </div>
                         
                                         ) : (
-                                            <p>No image available</p>
+                                            <p className='text-xl'>please wait a minute</p>
                                         )}
                                     </div>
                                 </Link>

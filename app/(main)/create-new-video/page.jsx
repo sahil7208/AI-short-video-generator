@@ -11,11 +11,13 @@ import axios from 'axios';
 import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import { useAuthContext } from '@/app/provider';
+import { useRouter } from 'next/navigation';
 
  const CreateNewVideo = () => {
   const [formData, setFormData] = useState();
   const [loading,setLoading] = useState(false)
     const {user} = useAuthContext();
+    const router = useRouter();
   const CreateInitialVideoRecord = useMutation(api.videoData.CreateVideoData);
   const onHandleInputChange = (fieldName,fieldValue) => {
     console.log("handleInputchange called")
@@ -55,7 +57,7 @@ import { useAuthContext } from '@/app/provider';
 
     console.log("resp at create new video: ",resp)
     setLoading(false)
-
+    router.push('/dashboard');
     const result = await axios.post('/api/generate-video-data',{
       ...formData,
       recordId: resp,
